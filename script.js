@@ -109,7 +109,7 @@ const getWeather = async function (latitude, longitude) {
   try {
     // Fetch weather data from the weather API
     const data = await getJSON(
-      `http://api.weatherapi.com/v1/forecast.json?q=${latitude} ${longitude}&days=6&key=${API_KEYS}`
+      `https://api.weatherapi.com/v1/forecast.json?q=${latitude} ${longitude}&days=6&key=${API_KEYS}`
     );
 
     // Log the fetched data
