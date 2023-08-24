@@ -1,0 +1,273 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background: #212529;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #fff;
+}
+.section {
+  max-width: 89rem;
+  margin: 1.2rem auto;
+}
+.search {
+  width: 70%;
+  height: 4rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  margin: 2rem auto;
+  padding: 0.5rem;
+  position: relative;
+}
+.search-input {
+  width: 100%;
+  height: 100%;
+  font-size: 1.5rem;
+  font-family: 'Plus Jakarta Sans';
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+}
+.search-btn {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 0.8rem;
+  right: 2rem;
+}
+.search-icon {
+  width: 2rem;
+  fill: rgba(255, 255, 255, 0.6);
+}
+/* input[type='search']::-webkit-search-cancel-button {
+  display: none;
+} */
+
+.search-input::placeholder {
+  font-size: 1.2rem;
+}
+
+.main {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 4.8rem;
+}
+.weather-icon {
+  width: 22rem;
+}
+.main-condition {
+  width: 22rem;
+}
+.city-name {
+  font-size: 2rem;
+  font-weight: 500;
+}
+.temp-deg {
+  font-size: 6rem;
+  font-weight: 700;
+}
+.weather-main {
+  font-size: 3rem;
+  font-weight: 400;
+}
+.weather-time {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 2rem;
+}
+.temperature {
+  display: flex;
+  gap: 6rem;
+  justify-content: center;
+  margin-top: 1.2rem;
+}
+.temperature-range {
+  display: flex;
+  align-items: center;
+}
+.temperature-icon {
+  fill: #d47b68;
+  margin-top: 1rem;
+}
+.fa-arrow-down {
+  fill: #788bff;
+}
+.temperature-label {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+}
+.temperature-value {
+  font-size: 1.8rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+.details {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  gap: 4rem;
+  margin: 4rem auto;
+}
+.detail-item {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+.detail-icon {
+  width: 5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  fill: #f8f9fa;
+  padding: 1rem;
+  margin-right: 0.5rem;
+}
+.detail-name {
+  width: max-content;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  align-self: flex-start;
+}
+.detail-value {
+  width: fit-content;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+.text {
+  display: block;
+  margin-left: 0.5rem;
+}
+
+.forecast {
+  width: 96%;
+  margin: 1.2rem auto;
+}
+.forecast-title {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+.forecast-elements {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.forecast-item {
+  width: 18%;
+  height: 18rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.5rem;
+}
+
+.forecast-icon {
+  width: 7rem;
+  margin-bottom: 0.4rem;
+  margin-top: 1rem;
+}
+.forecast-day {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: normal;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.forecast-description {
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: center;
+  line-height: normal;
+  color: #fff;
+}
+.cart {
+  width: 45%;
+  height: 40rem;
+  color: #000000;
+  background-color: #fef3f2;
+  border-radius: 1rem;
+  text-align: center;
+  align-items: center;
+  padding: 1rem;
+  margin: 10rem auto;
+}
+
+.context {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cart-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 3rem 0 2rem;
+}
+.cart-text {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #787878;
+}
+.error {
+  border-bottom: 2rem solid #f97066;
+}
+.error-icon {
+  width: 10rem;
+  fill: #f97066;
+}
+.start {
+  border-bottom: 2rem solid #669ef9;
+}
+.hide {
+  display: none;
+}
+.spinner {
+  width: max-content;
+  margin: 10rem auto;
+}
+.spinner-icon {
+  width: 15rem;
+  fill: #669ef9;
+  animation: spin 2.5s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.me {
+  width: fit-content;
+  margin: 4rem auto;
+}
+.me-title {
+  display: inline-block;
+  font-weight: 500;
+}
