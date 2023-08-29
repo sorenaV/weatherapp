@@ -15,6 +15,7 @@
   }
   .detail-icon {
     width: 4rem;
+    height: 4rem;
     padding: 0.5rem;
   }
   .detail-name {
@@ -67,7 +68,8 @@
     flex-direction: row;
   }
   .forecast-icon {
-    margin: 0;
+    width: 4rem;
+    margin: 0 1rem;
   }
   .forecast-day,
   .forecast-description {
