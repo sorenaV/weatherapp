@@ -1,4 +1,5 @@
 'use strict';
+import icon from './img/sprite.svg';
 
 const searchInput = document.querySelector('.search-input'),
   searchForm = document.querySelector('.search'),
@@ -66,7 +67,7 @@ const errorMessage = function (errorMess) {
   const markup = `
       <div class="context">
         <svg class="error-icon">
-          <use xlink:href="img/sprite.svg#error-warning" />
+          <use xlink:href="${icon}#error-warning" />
         </svg>
         <h3 class="cart-title">OOPS!</h3>
         <p class="cart-text">${errorMess} 👆</p>
@@ -137,115 +138,120 @@ const renderMarkup = function (data) {
   weatherContainer.classList.remove('hide');
 
   return `
-<div class="main">
-  <svg class="weather-icon">
-    <use xlink:href="${getIconPath(current.condition.code, current.is_day)}" />
-  </svg>
+      <div class="main">
+        <svg class="weather-icon">
+          <use xlink:href="${getIconPath(
+            current.condition.code,
+            current.is_day
+          )}" />
+        </svg>
 
-  <div class="main-condition">
-    <p class="city-name">${location.region}</p>
-    <h1 class="temp-deg">${Math.trunc(current.temp_c) + ' °C'}</h1>
-    <h1 class="weather-main">${current.condition.text}</h1>
-    <h3 class="weather-time">${location.name + getFormattedDate()}</h3>
-  </div>
-</div>
-
-<div class="temperature">
-  <div class="temperature-range">
-    <svg class="fa-arrow-up temperature-icon">
-      <use xlink:href="img/sprite.svg#arrow-up" />
-    </svg>
-    <div>
-      <span class="temperature-label">Upper:</span>
-      <p class="temperature-value max">${
-        Math.trunc(forecastDays[0].day.maxtemp_c) + '°C'
-      }</p>
-    </div>
-  </div>
-  <div class="temperature-range">
-      <svg class="fa-arrow-down temperature-icon">
-        <use xlink:href="img/sprite.svg#arrow-down" />
-      </svg>
-    <div>
-      <span class="temperature-label">Lower:</span>
-      <p class="temperature-value min">${
-        Math.trunc(forecastDays[0].day.mintemp_c) + '°C'
-      }</p>
-    </div>
-  </div>
-</div>
-
-<div class="details">
-  <div class="detail-item">
-    <svg class="detail-icon">
-      <use xlink:href="img/sprite.svg#windy" />
-    </svg>
-    
-    <div class="text">
-      <h5 class="detail-name">Wind</h5>
-      <p class="detail-value wind">${Math.trunc(current.wind_kph) + ' km/h'}</p>
-    </div>
-  </div>
-
-  <div class="detail-item">
-    <svg class="detail-icon">
-      <use xlink:href="img/sprite.svg#celsius" />
-    </svg>
-    <div class="text">
-      <h5 class="detail-name">Feels Like</h5>
-      <p class="detail-value feels-like">${
-        Math.trunc(current.feelslike_c) + ' °C'
-      }</p>
-    </div>
-  </div>
-
-  <div class="detail-item">
-    <svg class="detail-icon">
-      <use xlink:href="img/sprite.svg#ruler" />
-    </svg>
-    <div class="text">
-      <h5 class="detail-name">Humidity</h5>
-      <p class="detail-value humidity">${current.humidity + ' %'}</p>
-    </div>
-  </div>
-
-  <div class="detail-item">
-    <svg class="detail-icon">
-      <use xlink:href="img/sprite.svg#water-percent" />
-    </svg>
-    <div class="text">
-      <h5 class="detail-name">Pressure</h5>
-      <p class="detail-value pressure">${current.pressure_mb}</p>
-    </div>
-  </div>
-</div>
-
-<div class="forecast">
-  <h2 class="forecast-title">Next 5 Days:</h2>
-  <div class="forecast-elements">
-
-  ${forecastDays
-    .map((value, index) => {
-      return `<div class="forecast-item">
-      <svg class="forecast-icon">
-      <use xlink:href="${getIconPath(value.day.condition.code)}" />
-    </svg>
-      <div class="forecast-text">
-        <h1 class="forecast-day">${getFormattedDate(value.date)}</h1>
-        <p class="forecast-description">${value.day.condition.text}</p>
+        <div class="main-condition">
+          <p class="city-name">${location.region}</p>
+          <h1 class="temp-deg">${Math.trunc(current.temp_c) + ' °C'}</h1>
+          <h1 class="weather-main">${current.condition.text}</h1>
+          <h3 class="weather-time">${location.name + getFormattedDate()}</h3>
+        </div>
       </div>
-    </div>`;
-    })
-    .join('')}
 
-  </div>
-</div>
-  `;
+      <div class="temperature">
+        <div class="temperature-range">
+          <svg class="fa-arrow-up temperature-icon">
+            <use xlink:href="${icon}#arrow-up" />
+          </svg>
+          <div>
+            <span class="temperature-label">Upper:</span>
+            <p class="temperature-value max">${
+              Math.trunc(forecastDays[0].day.maxtemp_c) + '°C'
+            }</p>
+          </div>
+        </div>
+        <div class="temperature-range">
+            <svg class="fa-arrow-down temperature-icon">
+              <use xlink:href="${icon}#arrow-down" />
+            </svg>
+          <div>
+            <span class="temperature-label">Lower:</span>
+            <p class="temperature-value min">${
+              Math.trunc(forecastDays[0].day.mintemp_c) + '°C'
+            }</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="details">
+        <div class="detail-item">
+          <svg class="detail-icon">
+            <use xlink:href="${icon}#windy" />
+          </svg>
+          
+          <div class="text">
+            <h5 class="detail-name">Wind</h5>
+            <p class="detail-value wind">${
+              Math.trunc(current.wind_kph) + ' km/h'
+            }</p>
+          </div>
+        </div>
+
+        <div class="detail-item">
+          <svg class="detail-icon">
+            <use xlink:href="${icon}#celsius" />
+          </svg>
+          <div class="text">
+            <h5 class="detail-name">Feels Like</h5>
+            <p class="detail-value feels-like">${
+              Math.trunc(current.feelslike_c) + ' °C'
+            }</p>
+          </div>
+        </div>
+
+        <div class="detail-item">
+          <svg class="detail-icon">
+            <use xlink:href="${icon}#ruler" />
+          </svg>
+          <div class="text">
+            <h5 class="detail-name">Humidity</h5>
+            <p class="detail-value humidity">${current.humidity + ' %'}</p>
+          </div>
+        </div>
+
+        <div class="detail-item">
+          <svg class="detail-icon">
+            <use xlink:href="${icon}#water-percent" />
+          </svg>
+          <div class="text">
+            <h5 class="detail-name">Pressure</h5>
+            <p class="detail-value pressure">${current.pressure_mb}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="forecast">
+        <h2 class="forecast-title">Next 5 Days:</h2>
+        <div class="forecast-elements">
+
+        ${forecastDays
+          .map((value, index) => {
+            return `<div class="forecast-item">
+            <svg class="forecast-icon">
+            <use xlink:href="${getIconPath(value.day.condition.code)}" />
+          </svg>
+            <div class="forecast-text">
+              <h1 class="forecast-day">${getFormattedDate(value.date)}</h1>
+              <p class="forecast-description">${value.day.condition.text}</p>
+            </div>
+          </div>`;
+          })
+          .join('')}
+
+        </div>
+      </div>
+        `;
 };
 
 //Returns the path of an icon based on the provided code and the time of day
 const getIconPath = function (code, isDay = true) {
-  const IMAGE_PATH = 'img/sprite.svg#';
+  const IMAGE_PATH = `${icon}#`;
   switch (code) {
     //rainy
     case 1063:
@@ -299,12 +305,15 @@ const getIconPath = function (code, isDay = true) {
     case 1135:
     case 1147:
       return IMAGE_PATH + 'cloud-fog';
+    //partly cloud
     case 1003:
     case 1006:
       //Check for night
       return isDay ? IMAGE_PATH + 'cloud-sun' : IMAGE_PATH + 'cloud-moon';
+    //cloud
     case 1009:
       return IMAGE_PATH + 'cloud';
+    //clear
     default:
       //check for night
       return isDay ? IMAGE_PATH + 'sun' : IMAGE_PATH + 'moon-stars';
