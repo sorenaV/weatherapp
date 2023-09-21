@@ -227,7 +227,7 @@ const renderMarkup = function (data) {
       </div>
 
       <div class="forecast">
-        <h2 class="forecast-title">Next 5 Days:</h2>
+        <h2 class="forecast-title">Next Days:</h2>
         <div class="forecast-elements">
 
         ${forecastDays
