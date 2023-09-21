@@ -3,7 +3,7 @@
 Welcome to the Weather Conditions App! 🌦️
 
 This application provides you with up-to-date weather information, allowing you to stay informed about current weather conditions and forecasts for your location and beyond.
-[View Live](weathersorena.vercel.app)
+[View Live](https://weathersorena.vercel.app)
 
 
 ## ☁️ Features:
